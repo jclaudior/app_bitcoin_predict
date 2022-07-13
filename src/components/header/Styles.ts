@@ -29,7 +29,7 @@ export const Logo = styled.div`
     flex-direction: column;
     align-items: center;
     width: 200px;
-    > span {
+    span {
         font-size: 30px;
     }
 
