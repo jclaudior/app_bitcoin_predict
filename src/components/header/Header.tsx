@@ -8,11 +8,13 @@ function Header(){
     return (
         <Container>
             <Logo>
+                <a>
                 <span>
                     <img src={logoimg}/>
                     ITCOIN
                 </span>
                 <div>PREDICTION</div>
+                </a>
             </Logo>
             <Menu>
                 <li>TODAY</li>
@@ -22,9 +24,9 @@ function Header(){
                 <li>PROJECT</li>
             </Menu>
             <Social>
-                    FOLLOW ME
-                    <a href='https://github.com/jclaudior' target="_blank"><img src={github}></img></a>
-                    <a href='https://www.linkedin.com/in/jo%C3%A3o-claudio-b25ba5104/' target="_blank"><img src={linkdin}></img></a>
+                    <span>FOLLOW ME</span>
+                    <a href='https://github.com/jclaudior' target="_blank"><img className='icon' src={github}></img></a>
+                    <a href='https://www.linkedin.com/in/jo%C3%A3o-claudio-b25ba5104/' target="_blank"><img className='icon' src={linkdin}></img></a>
             </Social>
         </Container>
     )

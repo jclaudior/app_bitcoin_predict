@@ -9,6 +9,18 @@ export const Container = styled.div`
     font-family: Segoe UI;
     font-weight: bold;
     padding: 10px;
+
+    @media(max-width: 1025px) {
+        flex-direction: column;
+        align-items: start;
+        font-size: 20px;
+    }
+
+    @media(max-width: 660px) {
+        flex-direction: column;
+        align-items: start;
+        font-size: 20px;
+    }
 `;
 
 
@@ -25,10 +37,33 @@ export const Logo = styled.div`
         font-size: 20px;
         font-weight: 400;
     }
+
+    @media(max-width: 1025px) {
+        span {
+            font-size: 40px;
+        }
+        div {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        margin-left: 20px;
+    }
+
+    @media(max-width: 660px) {
+        span {
+            font-size: 40px;
+        }
+        div {
+            font-size: 30px;
+            font-weight: 400;
+        }
+    }
 `;
 
 export const Menu = styled.ul`
     list-style:none;
+    display: flex;
     > li {
         position: relative;
         float: left;
@@ -37,6 +72,25 @@ export const Menu = styled.ul`
         &:hover{
             opacity: 0.7;
         }
+    }
+
+    @media(max-width: 1025px) {
+        justify-content: start;
+        padding: 0px;
+        margin: 40px 0px;
+    }
+
+    @media(max-width: 660px) {
+        flex-direction: column;
+        align-items: start;
+        padding: 0px;
+        li {
+            margin: 5px 0px;
+            padding: 20px 40px;
+            width: 100%;
+            border: 1px solid #ED9902;
+        }
+        margin-left: 20px;
     }
 `;
 
@@ -49,6 +103,24 @@ export const Social = styled.div`
    font-weight: 300;
     > a {
         margin: 0px 5px;
+    }
+
+    @media(max-width: 1025px) {
+        justify-content: start;
+        padding: 0px;
+        margin-left: 20px;
+        span {
+            display: none;
+        }
+
+        .icon{
+            width: 50px;
+            height: 50px;
+        }
+
+        a{
+            margin-right: 10px;
+        }
     }
 `;
 

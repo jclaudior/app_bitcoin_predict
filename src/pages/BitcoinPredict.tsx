@@ -20,7 +20,7 @@ function BitcoinPredict() {
     return (
       <div>
         <Header/>
-        {JSON.stringify(bitcoinPredict)}
+        
       </div>
     );
 }
