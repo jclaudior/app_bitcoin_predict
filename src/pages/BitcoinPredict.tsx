@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Header from '../components/header/Header';
 import BitcoinPredictType from '../models/bitcoin.interface';
 import { BitcoinPredictService } from '../services/bitcoint.service';
 
@@ -17,7 +18,10 @@ function BitcoinPredict() {
     }, []);
 
     return (
-      <div>{JSON.stringify(bitcoinPredict)}</div>
+      <div>
+        <Header/>
+        {JSON.stringify(bitcoinPredict)}
+      </div>
     );
 }
   
