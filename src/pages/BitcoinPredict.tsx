@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import ContainerPredict from '../components/containerPredict/ContainerPredict';
 import Header from '../components/header/Header';
+import TitlePage from '../components/titlePage/TitlePage';
 import BitcoinPredictType from '../models/bitcoin.interface';
 import { BitcoinPredictService } from '../services/bitcoint.service';
+import { Container } from './Styles';
 
 function BitcoinPredict() {
-    const [bitcoinPredict, setBitcoinPredict] = useState<BitcoinPredictType>();
-
-    useEffect(() => {
-        BitcoinPredictService.getBitcoinPredictNow()
-            .then((data) => {
-                setBitcoinPredict(data);
-            })
-            .catch((data) => {
-                setBitcoinPredict(data);
-            });
-        return () => {};
-    }, []);
-
     return (
-      <div>
+      <Container>
         <Header/>
-        
-      </div>
+        <TitlePage title="TODAY"/>   
+        <ContainerPredict />
+      </Container>
     );
 }
   

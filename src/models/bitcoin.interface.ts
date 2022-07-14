@@ -12,10 +12,8 @@ export interface BitcoinBody{
 }
 
 export interface SimpleBitcoin{
-    simpleBitcoin: {
         open: number,
         high: number,
         low: number,
         close: number
-    }
 }
