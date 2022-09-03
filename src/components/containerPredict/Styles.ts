@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    padding: 50px 60px;
+export const ContentData = styled.div`
     color: #ED9902;
-    background-color: #023146;
 `;
 
 
+export const BodyData = styled.div`
+    background-color: #023146;
+    padding: 20px 55px; 
+    display: flex;
+    flex-wrap: wrap;
+`;
