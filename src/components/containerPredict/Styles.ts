@@ -10,4 +10,14 @@ export const BodyData = styled.div`
     padding: 20px 55px; 
     display: flex;
     flex-wrap: wrap;
+
+    @media(max-width: 1025px) {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    @media(max-width: 660px) {
+        flex-direction: column;
+        align-items: start;
+    }
 `;

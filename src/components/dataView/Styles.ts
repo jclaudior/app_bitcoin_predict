@@ -20,6 +20,11 @@ export const Container = styled.div`
     b{
         font-weight: 600;
     }
+
+    @media(max-width: 1025px) {
+        width: 100%;
+        border-right: 0px solid #ED9902;
+    }
 `;
 
 

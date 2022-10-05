@@ -16,6 +16,23 @@ export const Container = styled.div`
         margin-top: 10px;
         width: 20%
     }
+
+    @media(max-width: 1025px) {
+        width: 100%;
+        border-right: 0px solid #ED9902;
+        border-top: 1px solid #ED9902;
+
+        >div{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .img_ico{
+            margin-top: 10px;
+            width: 10%
+        }
+    }
     
 `;
 

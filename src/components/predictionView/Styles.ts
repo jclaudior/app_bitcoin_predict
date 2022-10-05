@@ -18,6 +18,13 @@ export const Container = styled.div`
         margin-top: 10px;
         width: 30%
     }
+
+    @media(max-width: 1025px) {
+        width: 100%;
+        border-right: 0px solid #ED9902;
+        border-top: 1px solid #ED9902;
+        align-items: start;
+    }
 `;
 
 
