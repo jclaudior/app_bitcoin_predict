@@ -2,7 +2,7 @@ import React from 'react'
 import github from '../../assets/github.png';
 import linkdin from '../../assets/linkedin.png';
 import logoimg from '../../assets/bitcoin_logo.png';
-import { Container, Logo, Menu, Social } from './Styles';
+import { Container, Logo, Menu, Social, StyledLink, StyledLinkExternal } from './Styles';
 
 function Header(){
     return (
@@ -17,11 +17,11 @@ function Header(){
                 </a>
             </Logo>
             <Menu>
-                <li>TODAY</li>
-                <li>BY DATE</li>
-                <li>BY PARAMETERS</li>
-                <li>API</li>
-                <li>PROJECT</li>
+                <li><StyledLink to="/">TODAY</StyledLink></li>
+                <li><StyledLink to="/bydate">BY DATE</StyledLink></li>
+                <li><StyledLink to="/byparameters">BY PARAMETERS</StyledLink></li>
+                <li><StyledLinkExternal href='https://hr-bitcoin-predict.herokuapp.com/swagger-ui/index.html' target='_blank'>API</StyledLinkExternal></li>
+                <li><StyledLinkExternal href='#'>PROJECT</StyledLinkExternal></li>
             </Menu>
             <Social>
                     <span>FOLLOW ME</span>

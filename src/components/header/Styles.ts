@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -9,6 +10,10 @@ export const Container = styled.div`
     font-family: Segoe UI;
     font-weight: bold;
     padding: 10px;
+    >a {
+        text-decoration: none;
+        color: #ED9902;
+    }
 
     @media(max-width: 1025px) {
         flex-direction: column;
@@ -21,6 +26,20 @@ export const Container = styled.div`
         align-items: start;
         font-size: 20px;
     }
+
+    
+    
+    
+`;
+
+export const StyledLink  = styled(Link)`
+    text-decoration: none;
+    color: #ED9902;
+`;
+
+export const StyledLinkExternal  = styled.a`
+    text-decoration: none;
+    color: #ED9902;
 `;
 
 
