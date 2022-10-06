@@ -1,68 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import BitcoinPredictType from '../../models/bitcoin.interface';
-import { BitcoinPredictService } from '../../services/bitcoint.service';
-import DateView from '../dataView/DateView';
-import LegendView from '../legendView/LegendView';
-import PredictionView from '../predictionView/PredictionView';
-import TitlePage from '../titlePage/TitlePage';
+import React from 'react'
 import {
-    BrowserRouter,
     Routes,
-    Route,
-    Link,
-    Outlet
+    Route
 } from "react-router-dom";
-
-import { BodyData, ContentData } from './Styles';
+import ToDay from '../toDay/ToDay';
+import ByDate from '../byDate/ByDate';
+import ByParameters from '../byParameters/ByParameters';
 
 
 function ContainerPredict() {
-    const [bitcoinPredict, setBitcoinPredict] = useState<BitcoinPredictType>();
-
-    useEffect(() => {
-        BitcoinPredictService.getBitcoinPredictNow()
-            .then((data) => {
-                setBitcoinPredict(data);
-            })
-            .catch((data) => {
-                setBitcoinPredict(data);
-            });
-        return () => { };
-    }, []);
-
     return (
 
         <div>
             <Routes>
                 <Route path="/" element={
-                    <ContentData>
-                        <TitlePage title="TODAY" />
-                        <BodyData>
-                            {bitcoinPredict && bitcoinPredict.body && <DateView {...bitcoinPredict} />}
-                            {bitcoinPredict && bitcoinPredict.body && <PredictionView {...bitcoinPredict} />}
-                            {bitcoinPredict && bitcoinPredict.body && <LegendView />}
-                        </BodyData>
-                    </ContentData>
+                    <ToDay/>
                 } />
                 <Route path="/bydate" element={
-                    <ContentData>
-                        <TitlePage title="BY DATE" />
-                        <BodyData>
-                            {bitcoinPredict && bitcoinPredict.body && <DateView {...bitcoinPredict} />}
-                            {bitcoinPredict && bitcoinPredict.body && <PredictionView {...bitcoinPredict} />}
-                            {bitcoinPredict && bitcoinPredict.body && <LegendView />}
-                        </BodyData>
-                    </ContentData>
+                    <ByDate/>
                 } />
                 <Route path="/byparameters" element={
-                    <ContentData>
-                        <TitlePage title="BY PARAMETERS" />
-                        <BodyData>
-                            {bitcoinPredict && bitcoinPredict.body && <DateView {...bitcoinPredict} />}
-                            {bitcoinPredict && bitcoinPredict.body && <PredictionView {...bitcoinPredict} />}
-                            {bitcoinPredict && bitcoinPredict.body && <LegendView />}
-                        </BodyData>
-                    </ContentData>
+                    <ByParameters/>
                 } />
             </Routes>
         </div>

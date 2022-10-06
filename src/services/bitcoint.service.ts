@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+import { Moment } from 'moment';
 import BitcoinPredictType, {SimpleBitcoin} from '../models/bitcoin.interface';
 
 const instance = axios.create({
@@ -15,7 +16,14 @@ const requests = {
 
 export const BitcoinPredictService = {
 	getBitcoinPredictNow: (): Promise<BitcoinPredictType> => requests.get('bitcoin'),
-	getBitcoinPredictByDate: (day: number, month: number, year: number): Promise<BitcoinPredictType> => requests.get(`bitcoin/${day}/${month}/${year}`),
+	getBitcoinPredictByDate: (date: Moment): Promise<BitcoinPredictType> => { 
+		let month: string = String(date.get("month")+1)
+		month = month.length > 1 ? month : `0${month}` 
+		let year = String(date.get("year"))
+		let day = String(date.get("date"))
+		day = day.length > 1 ? day : `0${day}`
+		return requests.get(`bitcoin/${day}/${month}/${year}`)
+	},
 	getBitcoinPredictBySimpleBitcoin: (simpleBitcoin: SimpleBitcoin): Promise<BitcoinPredictType> =>
 		requests.post('bitcoin', simpleBitcoin),
 };
