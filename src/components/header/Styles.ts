@@ -35,11 +35,22 @@ export const Container = styled.div`
 export const StyledLink  = styled(Link)`
     text-decoration: none;
     color: #ED9902;
+    width: 100%;
+
+    @media(max-width: 660px) {
+        padding: 20px 40px;
+        border: 1px solid #ED9902;
+    }
 `;
 
 export const StyledLinkExternal  = styled.a`
     text-decoration: none;
     color: #ED9902;
+    width: 100%;
+    @media(max-width: 660px) {
+        padding: 20px 40px;
+        border: 1px solid #ED9902;
+    }
 `;
 
 
@@ -104,14 +115,15 @@ export const Menu = styled.ul`
         align-items: start;
         padding: 0px;
         li {
-            margin: 5px 0px;
-            padding: 20px 40px;
+            margin: 30px 0px;
             width: 100%;
-            border: 1px solid #ED9902;
         }
         margin-left: 20px;
     }
 `;
+
+
+
 
 export const Social = styled.div`
    width: 200px;
@@ -124,6 +136,11 @@ export const Social = styled.div`
         margin: 0px 5px;
     }
 
+    .icon{
+        width: 30px;
+        height: 30px;
+    }
+
     @media(max-width: 1025px) {
         justify-content: start;
         padding: 0px;
@@ -133,8 +150,8 @@ export const Social = styled.div`
         }
 
         .icon{
-            width: 50px;
-            height: 50px;
+            width: 64px;
+            height: 64px;
         }
 
         a{

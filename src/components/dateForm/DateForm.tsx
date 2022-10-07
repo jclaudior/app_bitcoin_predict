@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import {TailSpin} from "react-loader-spinner";
 import moment, { Moment } from 'moment'
 
 import { Container, DateInput, SendButton } from './Styles';
@@ -13,7 +12,7 @@ function DateForm(props: { value: Moment, onChange: Function }) {
     moment.locale('pt-BR')
     return (
         <Container>
-            <DateInput type="date" value={moment(dateFormValue).format('YYYY-MM-DD')} onChange={(e) => { 
+            <DateInput type="date" value={moment(dateFormValue).format('YYYY-MM-DD')} max={moment().format('YYYY-MM-DD')} onChange={(e) => { 
                 console.log(e.target.value)
                 setDateFormValue(moment(e.target.value)) }} />
             <SendButton onClick={() => props.onChange(

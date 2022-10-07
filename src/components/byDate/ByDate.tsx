@@ -14,6 +14,7 @@ import { BodyData, ContentData } from './Styles';
 
 
 function ByDate() {
+    document.title = "ByDate";
     moment.locale('pt-BR')
     const [bitcoinPredict, setBitcoinPredict] = useState<BitcoinPredictType>();
 
@@ -31,8 +32,6 @@ function ByDate() {
         return () => { };
     }, [dateFormValue]);
 
-    console.log(bitcoinPredict)
-
     return (
         <ContentData>
             <TitlePage title="BY DATE" />
@@ -41,7 +40,7 @@ function ByDate() {
                 {bitcoinPredict && bitcoinPredict.body && <DateView {...bitcoinPredict} />}
                 {bitcoinPredict && bitcoinPredict.body && <PredictionView {...bitcoinPredict} />}
                 {bitcoinPredict && bitcoinPredict.body && <LegendView />}
-                {!bitcoinPredict && <TailSpin color='#ED9902'/>}
+                {!bitcoinPredict && <TailSpin color='#ED9902' />}
             </BodyData>
         </ContentData>
     )

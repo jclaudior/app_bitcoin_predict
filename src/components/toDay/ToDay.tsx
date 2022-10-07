@@ -12,6 +12,7 @@ import { BodyData, ContentData } from './Styles';
 
 
 function ToDay() {
+    document.title = "ToDay";
     const [bitcoinPredict, setBitcoinPredict] = useState<BitcoinPredictType>();
 
     useEffect(() => {
